@@ -13,7 +13,11 @@
     <div class="flex flex-col lg:flex-row gap-2">
         <!-- shape container  -->
          <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border-2 border-gray-700 rounded-sm p-4">
-            <!-- card 1 -->
+           
+          
+          
+          
+          <!-- card triangle -->
             <div class="card bg-base-100  shadow-sm hover:bg-red-200">
                 <figure class="px-10 pt-10">
                   <img
@@ -26,18 +30,25 @@
                   <p>Area (A) = 0.5 X b X h</p>
                   <!-- formula input  -->
                    <div class="mb-3">
-                    <input type="text" name="" id="" placeholder="b" class="border-1 border-gray-300 w-24">
+                    <input type="text" name="" id="triangle-base" placeholder="b" class="border-1 border-gray-300 w-24">
                     <span class="ml-2 mr-1"> cm </span>
-                    <input type="text" name="" id="" placeholder="h" class="border-1 border-gray-300 w-24" >
-                    <span> cm </span>
+                    <input type="text" name="" id="triangle-height" placeholder="h" class="border-1 border-gray-300 w-24" >
+                    <span> &nbsp; &nbsp; cm </span>
 
                    </div>
+                   <!-- area display part  -->
+                   <div>
+                    <span> Area : </span>
+                    <span id="area-output"></span><span>cm<sup>2</sup></span>
+                   </div>
+                   <!-- button section  -->
                   <div class="card-actions ">
-                    <button class="btn btn-primary ">Calculate</button>
+                    <button onclick="calculateTriangleArea()" class="btn btn-primary ">Calculate</button>
                   </div>
                 </div>
               </div>
-            <!-- card 2 -->
+
+            <!-- card rectangle -->
             <div class="card bg-base-100  shadow-sm hover:bg-amber-100">
                 <figure class="px-10 pt-10">
                   <img
@@ -50,18 +61,23 @@
                   <p>Area (A) =w X l</p>
                   <!-- formula input  -->
                    <div class="mb-3">
-                    <input type="text" name="" id="" placeholder="w" class="border-1 border-gray-300 w-24">
+                    <input type="text" name="" placeholder="w" id="rectangle-width" class="border-1 border-gray-300 w-24">
                     <span class="ml-2 mr-1"> cm </span>
-                    <input type="text" name="" id="" placeholder="l" class="border-1 border-gray-300 w-24" >
+                    <input type="text" name="" placeholder="l"  id="rectangle-length" class="border-1 border-gray-300 w-24" >
                     <span> cm </span>
 
                    </div>
+                   <!-- area display part  -->
+                   <div>
+                    <span> Area : </span>
+                    <span id="area-output-rectangle"></span><span>cm<sup>2</sup></span>
+                   </div>
                   <div class="card-actions ">
-                    <button class="btn btn-primary ">Calculate</button>
+                    <button id="btn-rectangle" class="btn btn-primary ">Calculate</button>
                   </div>
                 </div>
               </div>
-            <!-- card 3 -->
+            <!-- card parallelogram -->
             <div class="card bg-base-100  shadow-sm hover:bg-cyan-200">
                 <figure class="px-10 pt-10">
                   <img
@@ -74,18 +90,23 @@
                   <p>Area (A) =  b X h</p>
                   <!-- formula input  -->
                    <div class="mb-3">
-                    <input type="text" name="" id="" placeholder="b" class="border-1 border-gray-300 w-24">
+                    <input type="text" name="" id="para-base" placeholder="b" class="border-1 border-gray-300 w-24">
                     <span class="ml-2 mr-1"> cm </span>
-                    <input type="text" name="" id="" placeholder="h" class="border-1 border-gray-300 w-24" >
+                    <input type="text" name="" id="para-height" placeholder="h" class="border-1 border-gray-300 w-24" >
                     <span> cm </span>
 
                    </div>
+                    <!-- area display part  -->
+                    <div>
+                      <span> Area : </span>
+                      <span id="area-output-pera"></span><span>cm<sup>2</sup></span>
+                     </div>
                   <div class="card-actions ">
-                    <button class="btn btn-primary ">Calculate</button>
+                    <button id="btn-para" class="btn btn-primary ">Calculate</button>
                   </div>
                 </div>
               </div>
-            <!-- card 4 -->
+            <!-- card Rhombus section -->
             <div class="card bg-base-100  shadow-sm hover:bg-red-200">
                 <figure class="px-10 pt-10">
                   <img
@@ -98,18 +119,25 @@
                   <p>Area (A) = 0.5 X d<sub>2</sub> X d<sub>2</sub></p>
                   <!-- formula input  -->
                    <div class="mb-3">
-                    <input type="text" name="" id="" placeholder="d1" class="border-1 border-gray-300 w-24">
+                    <input type="text" name="" id="rhom-d1" placeholder="d1" class="border-1 border-gray-300 w-24">
                     <span class="ml-2 mr-1"> cm </span>
-                    <input type="text" name="" id="" placeholder="d2" class="border-1 border-gray-300 w-24" >
+                    <input type="text" name="" id="rhom-d2" placeholder="d2" class="border-1 border-gray-300 w-24" >
                     <span> cm </span>
 
                    </div>
+
+                    <!-- area display part  -->
+                    <div>
+                      <span> Area : </span>
+                      <span id="area-output-rhom"></span><span>cm<sup>2</sup></span>
+                     </div>
+
                   <div class="card-actions ">
-                    <button class="btn btn-primary ">Calculate</button>
+                    <button id="btn-rhom" class="btn btn-primary ">Calculate</button>
                   </div>
                 </div>
               </div>
-            <!-- card 5 -->
+            <!-- card pentagon section -->
             <div class="card bg-base-100  shadow-sm hover:bg-sky-200">
                 <figure class="px-10 pt-10">
                   <img
@@ -122,18 +150,23 @@
                   <p>Area (A) = 0.5 X p X b</p>
                   <!-- formula input  -->
                    <div class="mb-3">
-                    <input type="text" name="" id="" placeholder="p" class="border-1 border-gray-300 w-24">
+                    <input type="text" name="" id="penta-p" placeholder="p" class="border-1 border-gray-300 w-24">
                     <span class="ml-2 mr-1"> cm </span>
-                    <input type="text" name="" id="" placeholder="b" class="border-1 border-gray-300 w-24" >
+                    <input type="text" name="" id="penta-b" placeholder="b" class="border-1 border-gray-300 w-24" >
                     <span> cm </span>
 
                    </div>
+                    <!-- area display part  -->
+                    <div>
+                      <span> Area : </span>
+                      <span id="area-output-penta"></span><span>cm<sup>2</sup></span>
+                     </div>
                   <div class="card-actions ">
-                    <button class="btn btn-primary ">Calculate</button>
+                    <button id="btn-penta" class="btn btn-primary ">Calculate</button>
                   </div>
                 </div>
               </div>
-            <!-- card 6 -->
+            <!-- card ellipse section -->
             <div class="card bg-base-100  shadow-sm hover:bg-indigo-200">
                 <figure class="px-10 pt-10">
                   <img
@@ -146,14 +179,20 @@
                   <p>Area (A) = &pi; X a X b</p>
                   <!-- formula input  -->
                    <div class="mb-3">
-                    <input type="text" name="" id="" placeholder="a" class="border-1 border-gray-300 w-24">
+                    <input type="text" name="" id="ellipse-a" placeholder="a" class="border-1 border-gray-300 w-24">
                     <span class="ml-2 mr-1"> cm </span>
-                    <input type="text" name="" id="" placeholder="b" class="border-1 border-gray-300 w-24" >
+                    <input type="text" name="" id="ellipse-b" placeholder="b" class="border-1 border-gray-300 w-24" >
                     <span> cm </span>
 
                    </div>
+
+                    <!-- area display part  -->
+                    <div>
+                      <span> Area : </span>
+                      <span id="area-output-ellipse"></span><span>cm<sup>2</sup></span>
+                     </div>
                   <div class="card-actions ">
-                    <button class="btn btn-primary ">Calculate</button>
+                    <button id="btn-ellipse" class="btn btn-primary ">Calculate</button>
                   </div>
                 </div>
               </div>
